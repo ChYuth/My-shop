@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+:root {
+  --mainbackground: #061326; /*Dark Blue/Black*/
+  --button: #4f6ef7; /*Bright Blue*/
+  --text: #e0e0e0; /*Light Gray*/
+  --white: #fff;
+  --black: #000;
+}
+*{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+body{
+  background-color: var(--mainbackground);
+  color: var(--text);
+}
