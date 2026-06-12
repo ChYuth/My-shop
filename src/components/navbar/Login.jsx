@@ -1,24 +1,32 @@
 import React, { useState } from "react";
-import { RiFullscreenExitFill } from "react-icons/ri";
+import { motion } from "framer-motion";
+import { VscChromeClose } from "react-icons/vsc";
 import { MdEmail } from "react-icons/md";
 import { IoEyeSharp } from "react-icons/io5";
-import { FaEyeSlash } from "react-icons/fa";
+import { FaEyeSlash, FaLastfm } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { GiShop } from "react-icons/gi"; //shop
 // icon
 import { FaFacebook } from "react-icons/fa"; // facebook
 import { FaSquareXTwitter } from "react-icons/fa6"; // X
 import { FcGoogle } from "react-icons/fc"; //google
+import Register from "./Register";
 const socialLogins = [
   // { name: "Facebook", icon: <FaFacebook />, color: "text-blue-600 " },
   // { name: "Twitter", icon: <FaSquareXTwitter />, color: "text-black" },
   { name: "Google", icon: <FcGoogle />, color: "" },
 ];
-const Login = ({ modalLogin }) => {
+const Login = ({ modalLogin, openRegister }) => {
   const [show, setshow] = useState(false);
+
   return (
     <>
-      <div className="w-full h-full flex items-center justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="w-full h-full flex items-center justify-center relative"
+      >
         <form
           action="#"
           className="
@@ -35,7 +43,7 @@ const Login = ({ modalLogin }) => {
               onClick={() => modalLogin(false)}
               className="font-extrabold text-2xl active:text-red-500 active:scale-95 duration-75 cursor-pointer"
             >
-              <RiFullscreenExitFill />
+              <VscChromeClose />
             </button>
           </div>
           <header
@@ -149,7 +157,10 @@ const Login = ({ modalLogin }) => {
               Login
             </button>
           </div>
-          <span className="text-gray-600/70 w-full flex justify-center mt-2"> OR </span>
+          <span className="text-gray-600/70 w-full flex justify-center mt-2">
+            {" "}
+            OR{" "}
+          </span>
           <div>
             <div className=" w-full h-full flex justify-center items-center gap-6 mt-2 px-4">
               {socialLogins.map((social) => (
@@ -158,19 +169,31 @@ const Login = ({ modalLogin }) => {
                   className="text-3xl hover:opacity-80 transition-opacity  w-full text-center px-2"
                   aria-label={`Sign in with ${social.name}`}
                 >
-                  <span className=" flex items-center gap-2 text-[1rem] w-full justify-center border border-gray-700 rounded-md p-2 cursor-pointer ">{social.icon} <span className=" text-white text-sm">Continue with Google Account</span></span>
+                  <span className=" flex items-center gap-2 text-[1rem] w-full justify-center border border-gray-700 rounded-md p-2 cursor-pointer ">
+                    {social.icon}{" "}
+                    <span className=" text-white text-sm">
+                      Continue with Google Account
+                    </span>
+                  </span>
                 </button>
               ))}
             </div>
           </div>
           <p className="text-sm mt-4 m-auto  mb-4  w-full h-full flex justify-center items-center gap-2">
-           Don't have an account  
-            <span className="underline cursor-pointer font-bold">
-             sign up
-            </span>
+            Don't have an account
+            <button
+              type="button"
+              className="underline cursor-pointer font-bold"
+              onClick={() => {
+                modalLogin(false); // បិទ Login
+                openRegister(true); // បើក Register
+              }}
+            >
+              sign up
+            </button>
           </p>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 };
