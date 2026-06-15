@@ -1,0 +1,17 @@
+.typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #60a5fa;
+
+  animation:
+    typeDelete 10s steps(12, end) infinite,
+    blink 0.8s step-end infinite;
+}
+
+@keyframes typeDelete {
+  0% { max-width: 0; }
+  40% { max-width: 12ch; }
+  60% { max-width: 12ch; }
+  100% { max-width: 0; }
+}

@@ -68,7 +68,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-4 w-4/5 justify-end">
+          <div className="hidden lg:flex items-center gap-4 w-4/5 justify-end ">
             {NAV_LINKS.map((item) => (
               <NavItem item={item} />
             ))}
@@ -136,7 +136,7 @@ const Navbar = () => {
       )}
       {/* Login Modal */}
       {showLogin && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+        <div className="fixed inset-0 z-150 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <Login modalLogin={setShowLogin} openRegister={setShowRegister} />
         </div>
       )}

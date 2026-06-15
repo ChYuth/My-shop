@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100..900&family=Outfit:wght@100..900&family=Sora:wght@100..900&display=swap');
 @import 'tailwindcss';
 :root {
   --mainbackground: #061326; /*Dark Blue/Black*/
@@ -8,7 +9,7 @@
 }
 *{
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins'  , sans-serif;
   list-style: none;
   line-height: 1.5;
   scroll-behavior: smooth;

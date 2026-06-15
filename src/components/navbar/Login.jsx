@@ -25,7 +25,7 @@ const Login = ({ modalLogin, openRegister }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="w-full h-full flex items-center justify-center relative"
+        className="w-full h-full flex items-center justify-center relative z-100"
       >
         <form
           action="#"
