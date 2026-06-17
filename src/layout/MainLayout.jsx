@@ -7,7 +7,7 @@ const MainLayout = () => {
   return (
     <>
       <div className="w-full min-h-screen flex justify-between flex-col relative">
-        <header className="w-full h-auto bg-[#0b111e] text-white flex items-center justify-center  fixed">
+        <header className="w-full h-auto bg-[#0b111e] text-white flex items-center justify-center  fixed z-[99]">
           <Navbar />
         </header>
         <main className="w-full h-full flex-1 p-4 mt-16">

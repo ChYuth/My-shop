@@ -30,7 +30,7 @@ const Login = ({ modalLogin, openRegister }) => {
         <form
           action="#"
           className="
-    w-full lg:w-[420px] md:w-[500px] bg-blue-800/30
+    w-full lg:w-[420px] md:w-[500px] bg-blue-800/30 
     rounded-3xl shadow-2xl p-6
     border border-slate-200
   "
