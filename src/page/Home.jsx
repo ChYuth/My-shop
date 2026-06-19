@@ -8,6 +8,7 @@ import { CgOptions } from "react-icons/cg"; // learn more
 import "./Home.css";
 import Pictureshow from "../components/Home/Pictureshow";
 import Categories from "../components/Home/Categories";
+import CardLicenses from "../components/Home/CardLicenses";
 
 const Home = () => {
   return (
@@ -211,7 +212,11 @@ const Home = () => {
         >
           <Categories />
         </div>
+        {/*  Popular Licenses*/}
       </div>
+        <div className="w-full h-full flex justify-center items-center bg-slate-500/10 ">
+                    <CardLicenses/>
+        </div>
     </>
   );
 };

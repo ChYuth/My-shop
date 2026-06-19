@@ -79,10 +79,10 @@ const Items = () => {
                 <FaArrowRightLong />
               </span>
             </article>
-            <caption className="w-full h-full flex flex-col items-start justify-end mb-6">
+            <div className="w-full h-full flex flex-col items-start justify-end mb-6">
               <h1 className="text-4xl font-bold">Office Suites</h1>
               <p>Boost productivity with profestionale document tools.</p>
-            </caption>
+            </div>
           </motion.div>
           <div className="w-full h-full mt- grid grid-cols-1 lg:grid-cols-2 place-items-center  gap-10">
             <div className=" border-gray-800 shadow-md border shadow-black/30 rounded-2xl w-full h-full

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
-import office2024 from "../../assets/img/office2024.png";
+import office365 from "../../assets/img/office365.png";
 import Security from "../../assets/img/Security.png";
 import Support from "../../assets/img/support.png";
 
 const slides = [
   {
-    pic: office2024,
+    pic: office365,
     title: "Microsoft Office",
     caption:
       "Access Microsoft Word, Excel, PowerPoint and manage your documents efficiently.",

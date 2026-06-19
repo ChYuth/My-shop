@@ -10,7 +10,7 @@ const MainLayout = () => {
         <header className="w-full h-auto bg-[#0b111e] text-white flex items-center justify-center  fixed z-[99]">
           <Navbar />
         </header>
-        <main className="w-full h-full flex-1 p-4 mt-16">
+        <main className="w-full h-full flex-1 py-2 mt-16">
           <Outlet />
         </main>
         <footer className="w-full h-auto bg-black/30 text-white flex flex-col items-center justify-center rounded">
