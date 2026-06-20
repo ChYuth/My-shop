@@ -4,13 +4,14 @@ import { FaFileSignature } from "react-icons/fa6"; // workflow
 import { FaCloudDownloadAlt } from "react-icons/fa"; // claude storage
 import { FaLaptopCode } from "react-icons/fa6"; //developer
 import { FaStar } from "react-icons/fa"; // star
+import { motion } from "framer-motion";
 
 const card = [
   {
     caption: "Limite",
     icon: <MdOutlineSecurity />,
-    title: "Antivirus",
-    name: "AVAST",
+    title: "Defender",
+    name: "Anitivirus",
     rate: 4.9,
     qty: 2000,
     price: 49.99,
@@ -19,8 +20,8 @@ const card = [
   {
     caption: "New",
     icon: <FaFileSignature />,
-    title: "Antivirus",
-    name: "AVAST",
+    title: "Offcie",
+    name: "Activate",
     rate: 4.9,
     qty: 2000,
     price: 49.99,
@@ -29,11 +30,11 @@ const card = [
   {
     caption: "Null",
     icon: <FaCloudDownloadAlt />,
-    title: "Antivirus",
-    name: "AVAST",
+    title: "Storage",
+    name: "Claude",
     rate: 4.9,
-    qty: 2000,
-    price: 49.99,
+    qty: 2050,
+    price: 320,
     btn: "Add",
   },
   {
@@ -65,15 +66,38 @@ const CardLicenses = () => {
     <>
       <div className="container h-full flex flex-col justify-center items-center mb-2">
         <div className="w-full h-32 flex items-center justify-center flex-col">
-          <h1 className="text-4xl font-bold font-Inter text-center mt-2">Popular Licenses</h1>
+          <h1 className="text-4xl font-bold font-Inter text-center mt-2">
+            Popular Licenses
+          </h1>
           <p className="text-sm text-gray-500">
             Top rate software by our profestional community.
           </p>
         </div>
-        <div className="w-full h-full flex flex-wrap gap-6  flex justify-center p-2">
+        <div className="w-full h-full flex flex-wrap gap-6  justify-center p-2">
           {card.map((items, index) => {
             return (
-              <div className="w-74 h-84 rounded-lg border border-gray-800 bg-black/50 group hover:translate-y-[-0.5rem] duration-300 ease-In-Out">
+              <motion.div 
+            initial={{
+              opacity: 0,
+              y: 60,
+              scale: 0.9,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+              ease: "easeOut",
+            }}
+            viewport={{ amount: 0.3 }}
+            whileHover={{
+              y: -10,
+              scale: 1.02,
+            }}
+              className="w-74 h-84 rounded-lg border border-gray-800 bg-black/50 group hover:translate-y-[-0.5rem] duration-300 ease-In-Out cursor-default">
                 <div className="w-full  h-34 p-2 ">
                   {/* picture */}
                   <div
@@ -109,7 +133,7 @@ const CardLicenses = () => {
                         </h1>
                         <button
                           type="button"
-                          className=" bg-white text-black px-4 py-1 rounded "
+                          className=" bg-white text-black px-4 py-1 rounded active:scale-95 duration-300 hover:bg-blue-600 cursor-pointer "
                         >
                           {items.btn}
                         </button>
@@ -117,7 +141,7 @@ const CardLicenses = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

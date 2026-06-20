@@ -196,11 +196,11 @@ const Home = () => {
           </div>
           {/* slide */}
           <motion.div
-          initial={{opacity:0, x:100}}
-          whileInView={{opacity:1, x:0}}
-          transition={{duration:0.8, delay:0.5}}
-          
-           className="w-full h-full flex items-center justify-center  p-2">
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="w-full h-full flex items-center justify-center  p-2"
+          >
             {/* picture */}
             <Pictureshow />
           </motion.div>
@@ -214,9 +214,9 @@ const Home = () => {
         </div>
         {/*  Popular Licenses*/}
       </div>
-        <div className="w-full h-full flex justify-center items-center bg-slate-500/10 ">
-                    <CardLicenses/>
-        </div>
+      <div className="w-full h-full flex justify-center items-center bg-slate-500/10 ">
+        <CardLicenses />
+      </div>
     </>
   );
 };
