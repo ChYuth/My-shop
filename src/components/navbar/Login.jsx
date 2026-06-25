@@ -17,7 +17,25 @@ const socialLogins = [
 ];
 const Login = ({ modalLogin, openRegister }) => {
   const [show, setshow] = useState(false);
-
+  const [form, setform] = useState({
+    email: "",
+    password: "",
+    checked: false,
+  });
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setform({
+      ...form,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+  const clearFormLogin = (e) => {
+    setform({
+      email: "",
+      password: "",
+      checked: false,
+    });
+  };
   return (
     <>
       <motion.div
@@ -30,10 +48,10 @@ const Login = ({ modalLogin, openRegister }) => {
         <form
           action="#"
           className="
-    w-full lg:w-[420px] md:w-[500px] bg-blue-800/30 
-    rounded-3xl shadow-2xl p-6
-    border border-slate-200
-  "
+          w-full lg:w-[420px] md:w-[500px] bg-blue-800/30 
+          rounded-3xl shadow-2xl p-6
+          border border-slate-200
+        "
         >
           {/* title */}
           <div className="w-full h-4 flex justify-between px-4 py-2    text-white/90">
@@ -79,6 +97,8 @@ const Login = ({ modalLogin, openRegister }) => {
                 type="email"
                 id="email"
                 name="email"
+                value={form.email}
+                onChange={handleChange}
                 placeholder="name3333@gmail.com"
                 className="w-full outline-0   text-sky-950"
               />
@@ -109,6 +129,8 @@ const Login = ({ modalLogin, openRegister }) => {
                 id="password"
                 name="password"
                 type={show ? "text" : "password"}
+                value={form.password}
+                onChange={handleChange}
                 placeholder="••••••••••"
                 className="
                 w-full
@@ -123,8 +145,8 @@ const Login = ({ modalLogin, openRegister }) => {
                 type="button"
                 onClick={() => setshow(!show)}
                 className="
-                text-bluye-950
-                hover: text-sky-950
+                text-blue-950
+              hover:text-sky-950
                 transition-colors
                 duration-200
                 cursor-pointer
@@ -140,6 +162,8 @@ const Login = ({ modalLogin, openRegister }) => {
                 type="checkbox"
                 id="checked"
                 name="checked"
+                checked={form.checked}
+                onChange={handleChange}
                 className=" h-4 w-4  cursor-pointer "
               />
               <label htmlFor="checked">Remember</label>
@@ -148,18 +172,18 @@ const Login = ({ modalLogin, openRegister }) => {
               Forgot password
             </span>
           </div>
-          {/* btn */}
+          {/* btn login */}
           <div className="w-full h-full flex items-center justify-center px-6">
             <button
               className="mt-2 bg-blue-800 w-full  text-white cursor-pointer  py-2  rounded-2xl active:scale-95 active:bg-blue-600"
               type="button"
+              onClick={clearFormLogin}
             >
               Login
             </button>
           </div>
           <span className="text-gray-600/70 w-full flex justify-center mt-2">
-            {" "}
-            OR{" "}
+            OR
           </span>
           <div>
             <div className=" w-full h-full flex justify-center items-center gap-6 mt-2 px-4">
